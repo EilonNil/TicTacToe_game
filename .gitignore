@@ -1,7 +1,7 @@
 # Byte-compiled / optimized / DLL files
-/__pychache/check_win.cpython-38.pyc
-/__pychache/circle.cpython-38.pyc
-/__pychache/cross.cpython-38.pyc
-/__pychache/summon_circle.cpython-38.pyc
-/__pychache/summon_cross.cpython-38.pyc
-/.idea
+__pychache/check_win.cpython-38.pyc
+__pychache/circle.cpython-38.pyc
+__pychache/cross.cpython-38.pyc
+__pychache/summon_circle.cpython-38.pyc
+__pychache/summon_cross.cpython-38.pyc
+.idea
