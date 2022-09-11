@@ -34,6 +34,7 @@ def game(screen):  # function that runs the main game itself
     clock = pygame.time.Clock()
     finish = False
     cross_turn = True  # check to see who's turn is it
+    good_placement = 1 # used to check if there isnt already another placed circle or cross on chosen tile
     while not finish:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
