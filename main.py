@@ -41,22 +41,24 @@ def game(screen):  # function that runs the main game itself
             elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 x, y = pygame.mouse.get_pos()
                 if cross_turn:
-                    game_functions.summoning_pieces.summon_cross.summon_x(screen, x, y, POSITIONS, placements)
-                    count += 1
-                    if game_functions.check_win.check_if_win(placements):
-                        finish = True
-                        print("Crosses win!")
-                    elif count == 9:
-                        print("Tie match, no player won!")
-                        finish = True
-                    cross_turn = False
+                    good_placement = game_functions.summoning_pieces.summon_cross.summon_x(screen, x, y, POSITIONS, placements)
+                    if good_placement == 1:
+                        count += 1
+                        if game_functions.check_win.check_if_win(placements):
+                            finish = True
+                            print("Crosses win!")
+                        elif count == 9:
+                            print("Tie match, no player won!")
+                            finish = True
+                        cross_turn = False
                 else:
-                    game_functions.summoning_pieces.summon_circle.summon_c(screen, x, y, POSITIONS, placements)
-                    count += 1
-                    if game_functions.check_win.check_if_win(placements):
-                        finish = True
-                        print("Circles win!")
-                    cross_turn = True
+                    good_placement = game_functions.summoning_pieces.summon_circle.summon_c(screen, x, y, POSITIONS, placements)
+                    if good_placement == 1:
+                        count += 1
+                        if game_functions.check_win.check_if_win(placements):
+                            finish = True
+                            print("Circles win!")
+                        cross_turn = True
         pygame.display.flip()
         clock.tick(REFRESH_RATE)
 
